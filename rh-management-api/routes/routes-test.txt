@@ -1,0 +1,71 @@
+HR MANAGEMENT API ENDPOINTS
+==========================
+
+BASE URL: http://yourdomain.com/api
+
+DEPARTMENTS
+-----------
+1. List all departments
+   - GET /api/departments
+
+2. Create new department
+   - POST /api/departments
+   - Body: { "name": "string", "description": "string" }
+
+3. Get department details
+   - GET /api/departments/{id}
+
+4. Update department
+   - PUT/PATCH /api/departments/{id}
+   - Body: { "name": "string", "description": "string" }
+
+5. Delete department
+   - DELETE /api/departments/{id}
+
+EMPLOYEES
+---------
+1. List all employees
+   - GET /api/employees
+
+2. Create new employee
+   - POST /api/employees
+   - Body: { 
+       "name": "string", 
+       "email": "string", 
+       "SSN": "string", 
+       "department_id": number 
+     }
+
+3. Get employee details
+   - GET /api/employees/{id}
+
+4. Update employee
+   - PUT/PATCH /api/employees/{id}
+   - Body: { 
+       "name": "string", 
+       "email": "string", 
+       "SSN": "string", 
+       "department_id": number 
+     }
+
+5. Delete employee
+   - DELETE /api/employees/{id}
+
+HR AFFILIATIONS
+---------------
+1. List all employees with departments
+   - GET /api/rh/employees-with-departments
+
+2. Get department with its employees
+   - GET /api/rh/department-with-employees/{id}
+
+3. Get department of specific employee
+   - GET /api/rh/employee-department/{employeeId}
+
+4. Get employees of specific department
+   - GET /api/rh/department-employees/{departmentId}
+
+NOTES:
+- All dates in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)
+- CPF must be unique across employees
+- Department must exist before assigning employees
